@@ -37,6 +37,8 @@ export function initAngularjs() {
         enableColumnResizing: true,
         treeRowHeaderAlwaysVisible: true,
         enableGridMenu: true,
+        exporterExcelFilename: 'myFile.xlsx',
+        exporterExcelSheetName: 'Sheet1',
         onRegisterApi: function (gridApi) {
 
           $scope.gridApi = gridApi;
@@ -93,7 +95,7 @@ export function initAngularjs() {
       this.$onInit = function() {}
 
     }],
-    template: 'Hello, Angular 2 from angular 1! <div ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-selection class="grid" style="width:100%;"></div> {{msg.lastCellEdited}}'
+    template: 'Hello, Angular 2 from angular 1! <div ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-selection ui-grid-exporter class="grid" style="width:100%;"></div> {{msg.lastCellEdited}}'
   };
 
   const ng1Component2: angular.IComponentOptions = {
@@ -167,10 +169,10 @@ export function initAngularjs() {
       this.$onInit = function() {}
 
     }],
-    template: 'Hello, Angular 2 from angular 1! <div ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-selection class="grid" style="width:100%;"></div>'
+    template: 'Hello, Angular 2 from angular 1! <div ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-selection ui-grid-exporter class="grid" style="width:100%;"></div>'
   };
 
-  return angular.module('ng1Module', ['ui.grid', 'ui.grid.grouping', 'ui.grid.edit', 'ui.grid.selection'])
+  return angular.module('ng1Module', ['ui.grid', 'ui.grid.grouping', 'ui.grid.edit', 'ui.grid.selection', 'ui.grid.exporter'])
     .component('ui-grid', ng1Component)
     .component('ng1',  ng1Component2)
     .directive('appRoot', downgradeComponent({ component: AppComponent }));

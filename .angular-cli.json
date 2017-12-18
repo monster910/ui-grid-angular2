@@ -20,11 +20,12 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/angular-ui-grid/ui-grid.min.css"
+        "../lib/ui-grid.min.css"
       ],
       "scripts": [
         "../node_modules/angular/angular.min.js",
-        "../node_modules/angular-ui-grid/ui-grid.min.js"
+        "../node_modules/excel-builder/dist/excel-builder.dist.js",
+        "../lib/ui-grid.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
